@@ -1,33 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//Create an app where there is an array of data on state that is then shown on the DOM as a list.
+
+import React, { Component } from 'react'
 
 class App extends Component {
   constructor(){
-    super();
-
+    super()
     this.state = {
-      pets: [
-        "dog",
-        "cat",
-        "goat",
-        "fish",
-        "horse",
-        "hamster"
-      ]
+      list: ["s1", "s2", "s3", "s4"]
     }
   }
-
-  render() {
-    let displayPets = this.state.pets.map( (e, i) => {
+  //map over the array
+  render(){
+    let displayList = this.state.list.map((element, index) => {
       return (
-        <h2 key={ i }>{ e } </h2>
+      <h2 key={index}>{element}</h2>
       )
     })
 
     return (
-      <div className="App">
-        {displayPets}
+      <div>
+        {displayList}
       </div>
     );
   }

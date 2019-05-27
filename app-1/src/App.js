@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//Create a basic react app where you type in a text box and it shows up as text on the DOM.
+
+import React, { Component } from 'react'
 
 class App extends Component {
   constructor(){
-    super();
-
+    super()
     this.state = {
-      message: ""
+      text: ""
     }
   }
-
-  handleChange( val ) {
-    this.setState({message: val });
+  handleChange = (value) => {
+    this.setState({text: value})
   }
-
-  render() {
-    return (
-      <div className="App">
-      <input onChange={ (e) => this.handleChange(e.target.value) } type="text" />
-      <span>{this.state.message}</span>
+  render(){
+    return(
+      <div>
+        <input type="text" onChange={(event)=> this.handleChange(event.target.value)} />
+        <p>{this.state.text}</p>
       </div>
-    );
+    )
   }
 }
 

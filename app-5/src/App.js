@@ -1,16 +1,2 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Image from './Image'
+//Create an Image component that renders an <img /> element. The src for the <img /> should be passed down as a prop from the parent component. You can use whatever image URL you would like to or you can get a placeholder from https://placeholder.com/
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Image myImage={ "https://media.mnn.com/assets/images/2013/02/grumpycat.jpg.696x0_q80_crop-smart.jpg" } />
-      </div>
-    );
-  }
-}
-
-export default App;

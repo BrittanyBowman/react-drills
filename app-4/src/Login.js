@@ -1,31 +1,34 @@
-import React, { Component } from 'react';
+//Create a Login component that has two text inputs, one for a username and one for a password, and a button to login the user. When the login button is clicked, an alert should be showed to the user that displays what the user typed in for the username and password.
+
+import React, {Component} from 'react';
 
 class Login extends Component {
-    constructor() {
-        super()
-
+    constructor(){
+        super();
         this.state = {
-            username: "",
-            password: ""
-        };
+            username: '',
+            password: ''
+        }
+    }
 
-        this.handleLogin = this.handleLogin.bind(this);
+    nameChange(value){
+        this.setState({username: value})
     }
-    handleUsernameChange(name) {
-        this.setState({ username: name });
+
+    passChange(value){
+        this.setState({password: value})
     }
-    handlePasswordChange(pass) {
-        this.setState({ password: pass });
+
+    login = () => {
+        alert(`Username: ${this.state.username} Password: ${this.state.password}`)
     }
-    handleLogin() {
-        alert(`Username: ${this.state.username} Password: ${this.state.password}`);
-    }
-    render() {
-        return (
+
+    render(){
+        return(
             <div>
-                <input onChange={(e) => this.handleUsernameChange(e.target.value)} type="text" />
-                <input onChange={(e) => this.handlePasswordChange(e.target.value)} type="text" />
-                <button onClick={this.handleLogin}>Login</button>
+                <input type="text" onChange={event => this.nameChange(event.target.value)} placeholder="username..." />
+                <input type="text" onChange={event => this.passChange(event.target.value)} placeholder="password..." />
+                <button onClick={this.login}>Login</button>
             </div>
         )
     }

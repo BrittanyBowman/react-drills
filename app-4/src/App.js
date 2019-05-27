@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//Create a Login component that has two text inputs, one for a username and one for a password, and a button to login the user. When the login button is clicked, an alert should be showed to the user that displays what the user typed in for the username and password.
 
-import Login from './Login';
+import React, { Component } from "react";
+import Login from "./Login";
 
 class App extends Component {
-  render() {
+  render(){
     return (
-      <div className="App">
+      <div>
         <Login />
       </div>
-    );
+    )
   }
 }
 
