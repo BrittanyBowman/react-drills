@@ -1,10 +1,11 @@
+//Create an app that displays a to-do list. You will need two components, the `App` component and a `Todo` functional component. The `App` component should be responsible for getting new tasks and storing the list of tasks. The `Todo` component should be responsible for displaying the tasks from the `App` component in a list-like fashion. The `App` component should pass down a `tasks array` into the `Todo` component as a prop.
+
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Todo from './Todo'
+import Todo from './Todo';
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
@@ -15,14 +16,14 @@ class App extends Component {
     this.handleAddTask = this.handleAddTask.bind( this );
   }
 
-  handleInputChange(val){
-    this.setState({input: val});
+  handleInputChange( value ) {
+    this.setState({ input: value });
   }
 
-  handleAddTask(){
-    this.setState({
-      list: [...this.state.list, this.state.input ],
-      input: ''
+  handleAddTask() {
+    this.setState({ 
+      list: [...this.state.list, this.state.input ], 
+      input: '' 
     });
   }
 
